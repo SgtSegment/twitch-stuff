@@ -34,3 +34,6 @@ A port of some of DougDougs twitch stuff. (Currently just ChatGodApp)
 (You can use the crop filter to crop control panel part)
 
 `4.)` Open an actual browser of your choice, and go to `localhost:3000/chatmessage.html`. This is because there's a control panel there to make your life easier ;)
+
+## Usage Example
+[![Watch the video](https://github.com/user-attachments/assets/08830f2b-82f6-4b94-8502-18859283412d)](https://www.youtube.com/embed/6QJe7r8zojc)
