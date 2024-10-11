@@ -74,11 +74,13 @@ function resetChatters() {
 	activeChatter = false;
 	currentActive = "none";
 	io.emit("resetChatter");
-	const temp = fs.readdirSync("./temp");
-	for (let i = 0; i < temp.length; i++) {
-		fs.unlink("./temp/"+temp[i], (err) => {
-			console.log("FS Error: "+err);
-		});
+	if (!config.save_mp3s) {
+		const temp = fs.readdirSync("./temp");
+		for (let i = 0; i < temp.length; i++) {
+			fs.unlink("./temp/"+temp[i], (err) => {
+				console.log("FS Error: "+err);
+			});
+		}
 	}
 }
 async function selectChatter() {
