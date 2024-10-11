@@ -1,0 +1,13 @@
+{
+    "//":"Tokens n' shit",
+
+    "TWITCH_CHANNEL":"SgtSegment",
+    "TWITCH_TOKEN":"",
+    "AZURE_TOKEN":"",
+    "OBS_WS_PASSWORD":"sgtsegment",
+
+    "//":"Actual Config",
+
+    "save_mp3s": false,
+    "OBS_MEDIAPLAYER":"GodMedia"
+}
