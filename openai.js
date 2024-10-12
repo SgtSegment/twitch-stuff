@@ -1,11 +1,11 @@
-// 
+// 0bd3b13074784e4db8fc0b9cb60995fe
 const sdk = require('microsoft-cognitiveservices-speech-sdk');
 const { Buffer } = require('buffer');
 const { PassThrough } = require('stream');
 const fs = require('fs');
 const config = require("./config.json");
 
-// textToSpeech("", "eastus", "test test 123", "funny.mp3")
+// textToSpeech("0bd3b13074784e4db8fc0b9cb60995fe", "eastus", "test test 123", "funny.mp3")
 
 // textToSpeech("hello", "./temp/test.mp3");
 
@@ -14,6 +14,7 @@ async function textToSpeech(text, filename) {
     const region = "eastus"; // you may have to change this...
     const speechConfig = sdk.SpeechConfig.fromSubscription(key, region);
     speechConfig.speechSynthesisOutputFormat = 5; // mp3
+    speechConfig.speechSynthesisVoiceName = "en-US-GuyNeural";
 
     let audioConfig = null;
 
