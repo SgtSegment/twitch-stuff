@@ -56,7 +56,7 @@ client.on('message', async (channel, tags, message, self) => {
 		io.emit("newChatMsg", message);
 		const fileNameFunnys = tags.username+"_"+Date.now().toString()+".mp3";
 		await openai.textToSpeech(message, "./temp/"+fileNameFunnys);
-		await sleep(1000);
+		await sleep(750);
 		await obsStuff.setMediaPath(require.main.filename.split("twitch_chat.js")[0]+"temp/"+fileNameFunnys, config.OBS_MEDIAPLAYER);
 		await obsStuff.playMedia(config.OBS_MEDIAPLAYER);
 		console.log("audio");
@@ -74,13 +74,11 @@ function resetChatters() {
 	activeChatter = false;
 	currentActive = "none";
 	io.emit("resetChatter");
-	if (!config.save_mp3s) {
-		const temp = fs.readdirSync("./temp");
-		for (let i = 0; i < temp.length; i++) {
-			fs.unlink("./temp/"+temp[i], (err) => {
-				console.log("FS Error: "+err);
-			});
-		}
+	const temp = fs.readdirSync("./temp");
+	for (let i = 0; i < temp.length; i++) {
+		fs.unlink("./temp/"+temp[i], (err) => {
+			console.log("FS Error: "+err);
+		});
 	}
 }
 async function selectChatter() {
